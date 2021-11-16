@@ -1,10 +1,7 @@
-package network_basic;
-
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-public class IP {
-
+public class Ip {
 	public static void main(String[] args) {
 		try {
 			InetAddress ia = InetAddress.getLocalHost();
@@ -20,7 +17,6 @@ public class IP {
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
-
 	}
-
+	
 }
