@@ -1,0 +1,62 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.io.Writer;
+
+public class FilterStream {
+    
+	public static void main(String[] args) {
+		//파일을 복사 붙여넣는 작업
+		String originFileName = "a.txt";
+		String destFileName = "acopy.txt";
+		FileInputStream fis = null;//노드스트림
+		Reader reader = null;//보조스트림을 담을 그릇
+		BufferedReader br = null;//보조스트림을 담을 그릇
+		FileOutputStream fos = null;//노드스트림
+		Writer writer = null;//보조스트림을 담을 그릇
+		BufferedWriter bw = null;//보조스트림을 담을 그릇
+		//바이트 단위를 문자 단위로
+		try {
+			fis = new FileInputStream(originFileName);
+			reader = new InputStreamReader(fis);
+			fos = new FileOutputStream(destFileName);
+			writer = new OutputStreamWriter(fos);
+			//바이트 버퍼를 이용해서 한번에 100개씩
+			byte[] buf = new byte[100];
+			while(true) {
+				int count = fis.read(buf,0,buf.length);
+				if(count == -1) {
+					break;
+				}
+				fos.write(buf, 0, count);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			if(fis != null) {
+				try {
+					fis.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			if(fos != null) {
+				try {
+					fos.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
+
+}

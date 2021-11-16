@@ -1,0 +1,50 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FilterStream {
+    
+	public static void main(String[] args) {
+		//파일을 복사 붙여넣는 작업
+		String originFileName = "a.txt";
+		String destFileName = "acopy.txt";
+		FileInputStream fis = null;
+		FileOutputStream fos = null;
+		//바이트 단위
+		try {
+			fis = new FileInputStream(originFileName);
+			fos = new FileOutputStream(destFileName);
+			//바이트 버퍼를 이용해서 한번에 100개씩
+			byte[] buf = new byte[100];
+			while(true) {
+				int count = fis.read(buf,0,buf.length);
+				if(count == -1) {
+					break;
+				}
+				fos.write(buf, 0, count);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			if(fis != null) {
+				try {
+					fis.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			if(fos != null) {
+				try {
+					fos.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
+
+}
