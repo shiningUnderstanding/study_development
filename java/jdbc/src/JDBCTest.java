@@ -7,24 +7,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
+import comy.my.sql.MyConnection;
+
+//중복된 코드 제거
 public class JDBCTest {
 
 	public static void selectTest() {
-		//1.JDBC드라이버 로드
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
 		//2. DB연결
 		Connection con = null;
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "hr";
-		String password = "hr";
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
-			con = DriverManager.getConnection(url, user, password);
+			con = MyConnection.getConnection();
 			System.out.println("DB와 연결 성공");
 			
 			//3. SQL문 송신
@@ -42,48 +36,18 @@ public class JDBCTest {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			//5. DB 닫기
-			if(rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if(stmt != null) {
-				try {
-					stmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if(con != null) {
-				try {
-					con.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			MyConnection.close(rs, stmt, con);
 		}		
 	}
 	
 	public static void dmlTest() {
-		//1.JDBC드라이버 로드
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
 		
 		//2. DB연결
 		Connection con = null;
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "hr";
-		String password = "hr";
 		Statement stmt = null;
 		
 		try {
-			con = DriverManager.getConnection(url, user, password);
+			con = MyConnection.getConnection();
 			
 			Scanner sc = new Scanner(System.in);
 			System.out.print("고객 ID : ");
@@ -99,41 +63,17 @@ public class JDBCTest {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			//5. DB 닫기
-			if(stmt != null) {
-				try {
-					stmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if(con != null) {
-				try {
-					con.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			MyConnection.close(stmt, con);
 		}
 	}
 	
 	public static void dmlPreparedStatementTest() {
-		//1.JDBC드라이버 로드
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		
 		//2. DB연결
 		Connection con = null;
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "hr";
-		String password = "hr";
 		//Statement stmt = null;
 		PreparedStatement pstmt = null;//송신
 		try {
-			con = DriverManager.getConnection(url, user, password);
+			con = MyConnection.getConnection();
 			
 			Scanner sc = new Scanner(System.in);
 			System.out.print("고객 ID : ");
@@ -156,21 +96,7 @@ public class JDBCTest {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			//5. DB 닫기
-			if(pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if(con != null) {
-				try {
-					con.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			MyConnection.close(pstmt, con);
 		}		
 	}
 	
