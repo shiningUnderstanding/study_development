@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>block.html</title>
+  </head>
+  <body>
+    <!-- block요소 - h1~h6, hr, p, ol, ul, li, table, tbody, tr, div
+    자동줄바꿈됨, 크기조절가능(width, height, margin, padding)
+    다른요소와 닿은 부분의 마진은 겹친다.
+    inline요소 - a, span
+    자동줄바꿈 안됨, 크기조절 안됨(width, height, 상하마진 효과없음) 
+
+    inline-block요소 - img, th, td
+    자동줄바꿈 안됨, 크기조절가능
+    -->
+    블럭요소들은 자동줄바꿈됨
+    <div
+      style="
+        width: 100px;
+        padding: 10px;
+        border: 1px solid;
+        margin: 20px;
+        background-color: honeydew;
+      "
+    >
+      DIV1
+    </div>
+    <div style="width: 300px; padding: 10px; border: 1px solid; margin: 20px">
+      DIV2
+    </div>
+    인라인요소들은 자동줄바꿈안됨
+    <span
+      style="
+        width: 100px;
+        padding: 10px;
+        margin: 20px;
+        background-color: honeydew;
+      "
+      >SPAN1</span
+    >
+    <span style="width: 300px; padding: 10px; border: 1px solid; margin: 20px"
+      >SPAN2</span
+    >
+  </body>
+</html>

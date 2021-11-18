@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- 이 코드가 html5를 나타낸다. -->
+<html>
+  <head>
+    <title>첫 번째 HTML입니다.</title>
+  </head>
+  <body style="padding: 0 50px">
+    <h1>이현규의 첫 번째 HTML입니다.</h1>
+    <h3>HTML5</h3>
+    <hr />
+    <div id="p1">
+      애플이 아이폰의 일부 고장에 대해선 사용자가 스스로 수리할 수 있도록 일부
+      순정 부품을 판매하기로 했다.<br />
+      17일(현지시간) 월스트리트저널(WSJ)·CNBC 등 주요 외신에 따르면 애플이
+      이르면 내년 초부터 이 같은 제도를 시행하겠다는 방침을 공개했다고 보도했다.
+      WSJ은 아이폰의 디스플레이와 배터리, 카메라 등에서 자주 발생하는 고장이
+      사용자의 직접 수리가 허용되는 범위에 포함된다고 전했다. 애플은 직접 수리를
+      하려는 사용자에게 순정품 부품과 수리 도구 등을 제공할 예정이다. '애플 셀프
+      서비스 수리 온라인 스토어'에서 관련 부품을 별도 구매하도록 할 계획이다.
+      애플은 일단 아이폰 디스플레이와 배터리, 카메라와 같이 기본 기능에 들어가는
+      모듈을 중심으로 셀프 수리 서비스를 시작하고, 이후 추가 셀프 수리 가능
+      영역을 확대한다는 방침이다 다만 애플 측이 "셀프 서비스 수리는 전자 장치를
+      수리할 수 있는 지식과 경험을 갖춘 개별 기술자를 대상으로 한다"고 밝히면서
+      직접 자신의 아이폰을 고치는 소비자는 많지 않을 것으로 보인다. 결국
+      온라인을 통해 아이폰 순정품 부품을 구입한 소비자들이 사설 수리점에 맡기는
+      방식으로 '셀프 수리'가 이뤄질 것으로 예상된다. 애플의 이 같은 결정은
+      소비자의 불만을 감안한 것으로 보인다. 그동안 애플은 아이폰의 수리에 대해
+      엄격한 자체규정을 고수해왔으나 수리가 번거로워 소비자의 불만이 적지
+      않았다. 애플은 먼저 미국에 이 제도를 도입한 뒤 다른 국가로 서비스를 확산할
+      계획이다.<br />김현정 매경닷컴 기자(hjk@mk.co.kr)
+    </div>
+
+    <div id="p2">
+      번호없는 목록(UnOrderedList)
+      <ul style="list-style: square">
+        <li>정치</li>
+        <li>경제</li>
+        <li>사회</li>
+        <li>생활</li>
+        <li>문화</li>
+      </ul>
+
+      번호있는 목록(OrderedList)
+      <ol style="list-style: lower-roman">
+        <li>정치</li>
+        <li>경제</li>
+        <li>사회</li>
+        <li>생활</li>
+        <li>문화</li>
+      </ol>
+    </div>
+
+    <div id="p3">
+      <a href="http://www.naver.com">네이버</a>
+      <a href="http://www.daum.net">다음</a>
+      <a href="#p1">단락</a
+      ><!--같은페이지의 특정영역으로 이동 id속성활용 : #-->
+      <a href="#p2">목록</a>
+      <a href="#p3">링크</a>
+      <a href="sub.html">sub.html요청(상대경로)</a>
+      <a href="C:\java\myFront\sub.html">sub.html요청(절대경로)</a>
+    </div>
+
+    <div style="padding-top: 20px">
+      <table style="border: darkmagenta 2px solid">
+        <thead>
+          <tr style="justify-content: center">
+            <th style="border-bottom: green 1px dotted">상품번호</th>
+            <th
+              style="
+                border-bottom: green 1px dotted;
+                border-right: green dashed;
+              "
+            >
+              상품명
+            </th>
+            <th style="border-bottom: green 1px dotted">상품가격</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>C0001</td>
+            <td>아메리카노</td>
+            <td>1000</td>
+          </tr>
+          <tr>
+            <td>C0002</td>
+            <td>ICE아메리카노</td>
+            <td>1000</td>
+          </tr>
+          <tr>
+            <td>C0003</td>
+            <td>라테</td>
+            <td>1500</td>
+          </tr>
+          <tr>
+            <td>C0004</td>
+            <td>ICE라테</td>
+            <td>1500</td>
+          </tr>
+          <tr>
+            <td rowspan="2">j0001</td>
+            <td>오렌지주스</td>
+            <td>2000</td>
+          </tr>
+          <tr>
+            <td>오렌지주스얼음추가</td>
+            <td>2500</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <!--셀병합-->
+            <td colspan="3" style="border: 1px solid">총액 : 9500</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <p>
+      <img src="./imges/Raccoons.jpg" alt="Raccoons" style="width: 500px" />
+      <!--스타일 width와 img width를 둘다 쓰면 style이 적용-->
+      <img src="./imges/fox.jpg" alt="넓이 100px인 여우" width="500px" style="width: 100px" />
+      <img src="./imges/fox.jpg" alt="넓이 100px인 여우" width="100px" />
+      <img src="./imges/fox.jpg" alt="넓이 500px 높이 500px인 여우" width="500px" height="500px" />
+      <img src="./imges/fox.jpg" alt="넓이 50%인 여우" width="50%" />
+      <p style="border: 1px solid; width: 400px">
+        <img src="./imges/fox.jpg" alt="넓이 400px의 50%인 여우" width="50%" />
+      </p>
+      <p style="border: 1px solid; width: 50%">
+        <img src="./imges/fox.jpg" alt="넓이 50%인 여우" width="50%" />
+      </p>
+    </p>
+  </body>
+</html>
