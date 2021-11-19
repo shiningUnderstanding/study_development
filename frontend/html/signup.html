@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>회원가입</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div
+      style="width: 400px; margin: 50px; padding: 10px 50px; border: 1px solid"
+    >
+      <form
+        action="http://192.168.219.149:8889/signup"
+        method="post"
+        autocomplete="off"
+      >
+        <h3>고객가입</h3>
+        <div>
+          <label>
+            아이디 :
+            <input type="text" name="id" required />
+          </label>
+          <input type="submit" value="아이디중복확인" />
+        </div>
+        <div>
+          <label>
+            비밀번호 :
+            <input type="password" name="pwd" required />
+          </label>
+        </div>
+        <div>
+          <label>
+            비밀번호확인 :
+            <input type="password" name="pwd1" required />
+          </label>
+        </div>
+        <div>
+          <label>
+            이름 :
+            <input type="text" name="name" />
+          </label>
+        </div>
+        <div>
+          <label>
+            주소 :
+            <input type="text" style="width: 68px" />
+          </label>
+          <input type="submit" value="우편번호찾기" />
+        </div>
+        <div style="padding-left: 48px">
+          <input type="text" />
+        </div>
+        <div style="padding-left: 48px">
+          <input type="text" name="address" />
+        </div>
+        <input type="submit" value="가입" />
+        <input type="reset" value="CLEAR" />
+      </form>
+    </div>
+  </body>
+</html>
