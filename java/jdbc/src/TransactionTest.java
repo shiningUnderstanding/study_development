@@ -3,7 +3,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import comy.my.sql.MyConnection;
+import com.my.sql.MyConnection;
 
 public class TransactionTest {
 

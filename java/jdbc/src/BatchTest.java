@@ -2,7 +2,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import comy.my.sql.MyConnection;
+import com.my.sql.MyConnection;
 
 public class BatchTest {
 

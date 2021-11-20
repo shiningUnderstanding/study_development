@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-import comy.my.sql.MyConnection;
+import com.my.sql.MyConnection;
 
 //중복된 코드 제거
 public class JDBCTest {

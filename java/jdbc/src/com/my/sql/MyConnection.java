@@ -1,4 +1,4 @@
-package comy.my.sql;
+package com.my.sql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
