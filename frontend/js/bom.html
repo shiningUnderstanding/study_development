@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.addEventListener("load", function () {
+        let btObj = document.querySelector("button");
+        btObj.addEventListener("click", function () {
+          location.href = "http://www.daum.net";
+        });
+
+        let backObj = document.querySelector("button.back");
+        backObj.addEventListener("click", function () {
+          history.go(-1);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>리다이렉션</button>
+    <button class="back">뒤로가기</button>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <hea>
+    <script>
+      //변수의 사용범위
+      //window객체의 scope에 변수를 선언하는 것
+      var a;
+      a = 10;
+      console.log(window.a);
+      if (true) {
+        var a = "hello";
+        console.log(window.a);
+      }
+      console.log(window.a);
+
+      for (var i = 0; i < 5; i++) {
+        var a = i * 10;
+        console.log(window.a); //0, 10, 20, 30,40
+      }
+      console.log(a); // 40
+
+      var f1;
+      f1 = function () {
+        var a = true; //함수 안의 변수는 함수 스코프 안에 선언
+        b = "window객체scope변수입니다.";
+        window.a = 30;
+        console.log(window);
+        console.log("함수 내부 : a = " + a);
+        console.log("함수 내부 : b = " + b);
+      };
+      f1();
+      console.log(a); //40
+      console.log(b);
+
+      /*---let : 블럭scope변수로 선언하기---*/
+      let leta;
+      leta = 10;
+      console.log(leta); //10
+      console.log("window.leta : " + window.leta); //undefined
+
+      if (true) {
+        let leta = "hello";
+        console.log("if block. leta = " + leta);
+      }
+      console.log("outer if block. leta = " + leta);
+
+      let f2 = function () {
+        let leta = true;
+        var vara = 1;
+        console.log("함수내부 leta : " + leta);
+        console.log("함수내부 vara : " + vara);
+        if (true) {
+          //   console.log("함수의 if 내부 leta : " + leta);
+          //   console.log("함수의 if 내부 vara : " + vara);
+          let leta = "test";
+          var vara = "test";
+          console.log("함수의 if 내부 leta : " + leta); //test
+          console.log("함수의 if 내부 vara : " + vara); //test
+        }
+        console.log("함수내부 leta : " + leta);
+        console.log("함수내부 vara : " + vara);
+      };
+      f2();
+      console.log("함수외부 leta : " + leta);
+      //console.log("함수외부 vara : " + vara); //vara is not defined
+    </script>
+  </hea>
+</html>
