@@ -73,9 +73,9 @@ public class CustomerManager {
 					System.out.println("비밀번호[" + c.pwd + "]");
 					String cPwd = sc.nextLine();
 					//System.out.println("입력된 비번값:" + cPwd);
-					System.out.println("이름[" + c.name + "]");
+					System.out.println("이름[" + c.getName() + "]");
 					String cName = sc.nextLine();
-					System.out.println("주소[" + c.address + "]");
+					System.out.println("주소[" + c.getAddress() + "]");
 					String cAddress = sc.nextLine();
 					Customer cModify = new Customer(id, cPwd, cName, cAddress);
 					dao.modify(cModify);

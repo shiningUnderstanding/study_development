@@ -7,11 +7,9 @@ package com.my.customer.vo;
 * @author Administrator
 *
 */
-public class Customer {
+public class Customer extends Person {
 	public String id = new String();
 	public String pwd = new String();
-	public String name = new String();
-	public String address = new String();
 	
 	public Customer(){}
 	
@@ -23,10 +21,9 @@ public class Customer {
 	 * @param address 주소
 	 */
 	public Customer(String id, String pwd, String name, String address){
+		super(name, address);
 		this.id = id;
-		this.pwd = pwd;
-		this.name = name;
-		this.address = address;
+		this.pwd = pwd;	
 	}
 	
 	/**
@@ -65,21 +62,5 @@ public class Customer {
 	
 	public String getPwd() {
 		return pwd;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public String getName() {
-		return this.name;
-	}
-	
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	
-	public String getAddress() {
-		return this.address;
 	}
 }
