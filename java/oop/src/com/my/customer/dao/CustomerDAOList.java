@@ -130,10 +130,11 @@ public class CustomerDAOList implements CustomerDAOInterface{
 	public void remove(String id) throws RemoveException{
 		for(Customer c : customers) {
 			if(c.getId().equals(id)) {
-				throw new RemoveException("삭제할 id가 없습니다.");
+				customers.remove(new Customer(id,"","",""));
+				return;
 			}
 		}
-		customers.remove(new Customer(id,"","",""));
+		throw new RemoveException("삭제할 id가 없습니다.");
 	}
 
 	@Override

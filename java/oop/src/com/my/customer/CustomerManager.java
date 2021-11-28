@@ -1,6 +1,9 @@
 package com.my.customer;
 
-import com.my.customer.dao.CustomerDAO2;
+import java.util.List;
+
+import com.my.customer.dao.CustomerDAOInterface;
+import com.my.customer.dao.CustomerDAOList;
 import com.my.customer.exception.AddException;
 import com.my.customer.exception.FindException;
 import com.my.customer.exception.ModifyException;
@@ -9,8 +12,8 @@ import com.my.customer.vo.Customer;
 
 public class CustomerManager {
 	public static void main(String[] args) {
-		CustomerDAO2 dao;
-		dao = new CustomerDAO2(); // 최대 5명이 저장될 저장소
+		CustomerDAOInterface dao;
+		dao = new CustomerDAOList(); // 최대 5명이 저장될 저장소
 		
 		java.util.Scanner sc;
 		sc = new java.util.Scanner(System.in);
@@ -35,16 +38,21 @@ public class CustomerManager {
 				try {
 					dao.add(c1);
 				} catch (AddException e) {
-					e.printStackTrace();
+					System.out.println("추가실패 : " + e.getMessage());
 				}
 			}else if(work.equals("2")) {
 				System.out.println(">>저장소정보<<");
 				dao.printInfo();
 			}else if(work.equals("3")) {
 				System.out.println(">>고객전체조회<<");
-				Customer[] all = dao.findAll();
-				for(Customer c : all) {
-					c.printInfo();
+				List<Customer> all;
+				try {
+					all = dao.findAll();
+					for(Customer c : all) {
+						c.printInfo();
+					}
+				} catch (FindException e) {
+					System.out.println("고객 전체조회 : " + e.getMessage());
 				}
 			}else if(work.equals("4")) {
 				System.out.println(">>아이디로검색<<");
@@ -59,25 +67,25 @@ public class CustomerManager {
 						c.printInfo();
 					}
 				} catch (FindException e) {
-					e.printStackTrace();
+					System.out.println("고객조회 실패 : " + e.getMessage());
 				}
 
 			}else if(work.equals("5")) {
 				System.out.println(">>이름으로검색<<");
 				System.out.println("검색어 : ");
 				String word = sc.nextLine();
-				Customer[] cArr;
+				List<Customer> cList;
 				try {
-					cArr = dao.findByName(word);
-					if(cArr == null) {
+					cList = dao.findByName(word);
+					if(cList == null) {
 						System.out.println("단어 [ " + word + "]를 이름에 포함한 고객은 존재하지 않습니다");
 					}else {
-						for(Customer c2 : cArr) {
+						for(Customer c2 : cList) {
 							c2.printInfo();
 						}
 					}
 				} catch (FindException e) {
-					e.printStackTrace();
+					System.out.println(e.getMessage());
 				}
 
 			}else if(work.equals("6")) { //고객수정
@@ -102,10 +110,10 @@ public class CustomerManager {
 						Customer cModify = new Customer(id, cPwd, cName, cAddress);
 						dao.modify(cModify);
 					}
-				} catch (FindException e1) {
-					e1.printStackTrace();
+				} catch (FindException e) {
+					System.out.println("고객조회실패 : " + e.getMessage());
 				} catch (ModifyException e) {
-					e.printStackTrace();
+					System.out.println("고객수정실패 : " + e.getMessage());
 				}
 			}else if(work.equals("7")) {
 				System.out.println(">>삭제<<");
@@ -113,17 +121,9 @@ public class CustomerManager {
 				String id = sc.nextLine();
 				Customer c;
 				try {
-					c = dao.findById(id);
-					if(c == null) {
-						System.out.println("id : " + id + "고객은 존재하지 않습니다");
-					}else {
-						dao.delete(id);
-						System.out.println("id : " + id + "삭제가 완료되었습니다.");
-					}
-				} catch (FindException e) {
-					e.printStackTrace();
+					dao.remove(id);
 				} catch (RemoveException e) {
-					e.printStackTrace();
+					System.out.println("고객삭제실패 : " + e.getMessage());
 				}
 
 			}else if(work.equals("9")) {
