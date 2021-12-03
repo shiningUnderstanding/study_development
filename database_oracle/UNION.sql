@@ -1,14 +1,14 @@
---ÁýÇÕ
---»ç¿øÀÇ »ç¹ø, Á÷¹«¹øÈ£¸¦ Ãâ·ÂÇÏ½Ã¿À
+--ì§‘í•©
+--ì‚¬ì›ì˜ ì‚¬ë²ˆ, ì§ë¬´ë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤
 SELECT employee_id, job_id
 FROM employees;
 
---Á÷¹«°æ·Â(job_history)ÀÇ »ç¹ø, ÀÌÀüÁ÷¹«¹øÈ£¸¦ Ãâ·ÂÇÏ½Ã¿À
+--ì§ë¬´ê²½ë ¥(job_history)ì˜ ì‚¬ë²ˆ, ì´ì „ì§ë¬´ë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤
 SELECT employee_id, job_id, start_date, end_date
 FROM job_history;
 
---101¹ø »ç¿øÀÇ ÀÌÀüÁ÷¹«¿Í ÇöÀçÁ÷¹«¸¦ ¸ðµÎ Ãâ·ÂÇÏ½Ã¿À --3°Ç
---UNIONÀ» »ç¿ëÇÒ ¶§ SELECT¾ÈÀÇ ÄÃ·³ÀÇ °¹¼ö¿Í °¢ ÄÃ·³ÀÇ ÀÚ·áÇüµµ ÀÏÄ¡ÇØ¾ß ÇÑ´Ù.
+--101ë²ˆ ì‚¬ì›ì˜ ì´ì „ì§ë¬´ì™€ í˜„ìž¬ì§ë¬´ë¥¼ ëª¨ë‘ ì¶œë ¥í•˜ì‹œì˜¤ --3ê±´
+--UNIONì„ ì‚¬ìš©í•  ë•Œ SELECTì•ˆì˜ ì»¬ëŸ¼ì˜ ê°¯ìˆ˜ì™€ ê° ì»¬ëŸ¼ì˜ ìžë£Œí˜•ë„ ì¼ì¹˜í•´ì•¼ í•œë‹¤.
 SELECT employee_id, job_id
 FROM job_history
 WHERE employee_id = 101
@@ -23,8 +23,8 @@ UNION
 SELECT employee_id, job_id
 FROM employees;
 
---176¹ø »ç¿øÀÇ ÀÌÀüÁ÷¹«¿Í ÇöÀçÁ÷¹«¸¦ ¸ðµÎ Ãâ·ÂÇÏ½Ã¿À --2°Ç
---´Ü, Áßº¹Á÷¹«´Â Á¦°ÅÇÕ´Ï´Ù.
+--176ë²ˆ ì‚¬ì›ì˜ ì´ì „ì§ë¬´ì™€ í˜„ìž¬ì§ë¬´ë¥¼ ëª¨ë‘ ì¶œë ¥í•˜ì‹œì˜¤ --2ê±´
+--ë‹¨, ì¤‘ë³µì§ë¬´ëŠ” ì œê±°í•©ë‹ˆë‹¤.
 SELECT employee_id, job_id
 FROM job_history
 WHERE employee_id = 176
@@ -33,8 +33,8 @@ SELECT employee_id, job_id
 FROM employees
 WHERE employee_id = 176;
 
---176¹ø »ç¿øÀÇ ÀÌÀüÁ÷¹«¿Í ÇöÀçÁ÷¹«¸¦ ¸ðµÎ Ãâ·ÂÇÏ½Ã¿À --3°Ç
---UNION ALLÀº Áßº¹À» Çã¿ëÇÕ´Ï´Ù.
+--176ë²ˆ ì‚¬ì›ì˜ ì´ì „ì§ë¬´ì™€ í˜„ìž¬ì§ë¬´ë¥¼ ëª¨ë‘ ì¶œë ¥í•˜ì‹œì˜¤ --3ê±´
+--UNION ALLì€ ì¤‘ë³µì„ í—ˆìš©í•©ë‹ˆë‹¤.
 SELECT employee_id, job_id
 FROM job_history
 WHERE employee_id = 176
@@ -43,21 +43,21 @@ SELECT employee_id, job_id
 FROM employees
 WHERE employee_id = 176;
 ---------------------------------------------------
---±³ÁýÇÕ
+--êµì§‘í•©
 SELECT employee_id, job_id
 FROM job_history
 INTERSECT
 SELECT employee_id, job_id
 FROM employees;
 
---Â÷ÁýÇÕ
+--ì°¨ì§‘í•©
 SELECT employee_id, job_id
 FROM job_history
 MINUS
 SELECT employee_id, job_id
 FROM employees;
 
---ÁýÇÕ¿¬»êÀÚ¿¡¼­ ORDER BY´Â ¸Ç ¸¶Áö¸·¿¡ ³ª¿Í¾ß ÇÑ´Ù.
+--ì§‘í•©ì—°ì‚°ìžì—ì„œ ORDER BYëŠ” ë§¨ ë§ˆì§€ë§‰ì— ë‚˜ì™€ì•¼ í•œë‹¤.
 SELECT employee_id, job_id
 FROM job_history
 UNION
