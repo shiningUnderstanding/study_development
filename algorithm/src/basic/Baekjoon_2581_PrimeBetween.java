@@ -13,20 +13,20 @@ public class Baekjoon_2581_PrimeBetween {
 		int min = 0;
 		StringBuilder sb = new StringBuilder();
 		
-		//아리스토테네스의 체
-		boolean[] aristo = new boolean[10001];
-		aristo[0] = true;
-		aristo[1] = true;
+		//에라토스테네스의 체
+		boolean[] eratos = new boolean[10001];
+		eratos[0] = true;
+		eratos[1] = true;
 		for(int i = 2; i < Math.sqrt(10001);i++) {
-			if(!aristo[i]) {
+			if(!eratos[i]) {
 				for(int j = i * i; j < 10001; j += i) {
-					aristo[j] = true;
+					eratos[j] = true;
 				}
 			}
 		}
 		
 		for(int i = M; i <= N; i++) {
-			if(!aristo[i]) {
+			if(!eratos[i]) {
 				sum += i;
 				if(min == 0) {
 					min = i;

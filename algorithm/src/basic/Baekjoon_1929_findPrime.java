@@ -13,13 +13,13 @@ public class Baekjoon_1929_findPrime {
 		int N = Integer.parseInt(st.nextToken());
 		
 		
-		boolean[] aristo = new boolean[N + 1];
-		aristo[0] = true;
-		aristo[1] = true;
+		boolean[] eratos = new boolean[N + 1];
+		eratos[0] = true;
+		eratos[1] = true;
 		for(int i = 2; i <= Math.sqrt(N); i++) {
-			if(!aristo[i]) {
+			if(!eratos[i]) {
 				for(int j = i * i; j <= N; j = j + i) {
-					aristo[j] = true;
+					eratos[j] = true;
 				}
 			}
 		}
@@ -27,7 +27,7 @@ public class Baekjoon_1929_findPrime {
 		StringBuilder sb = new StringBuilder();
 		
 		for(int i = M; i <= N; i++) {
-			if(!aristo[i]) {
+			if(!eratos[i]) {
 				sb.append(i).append('\n');
 			}
 		}
