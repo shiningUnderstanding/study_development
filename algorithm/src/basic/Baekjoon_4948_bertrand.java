@@ -11,10 +11,25 @@ public class Baekjoon_4948_bertrand {
 		boolean[] eratos = new boolean[246913];
 		eratos[0] = true;
 		eratos[1] = true;
-		while((n = Integer.parseInt(br.readLine())) == 0) {
-			for(int i = n; i < 2 * n; i++) {
-				
+		for(int i = 2; i < Math.sqrt(246913); i++) {
+			if(!eratos[i]) {
+				for(int j = i * i; j < 246913; j += i) {
+					eratos[j] = true;
+				}
 			}
 		}
+		
+		StringBuilder sb = new StringBuilder();
+		int count = 0;
+		while((n = Integer.parseInt(br.readLine())) != 0) {
+			for(int i = n + 1; i <= 2 * n; i++) {
+				if(!eratos[i]) {
+					count++;
+				}
+			}
+			sb.append(count).append("\n");
+			count = 0;
+		}
+		System.out.println(sb);
 	}
 }
