@@ -7,7 +7,7 @@
  
  위의 각 폴더에 들어가면 세부 내용을 볼 수 있습니다.
  
-* java
+* [java](https://github.com/shiningUnderstanding/study_development/tree/master/java)
 
 * algorithm
 
