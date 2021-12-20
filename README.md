@@ -9,10 +9,10 @@
  
 * [java](https://github.com/shiningUnderstanding/study_development/tree/master/java)
 
-* algorithm
+* [algorithm](https://github.com/shiningUnderstanding/study_development/tree/master/algorithm)
 
-* data structure
+* [data structure](https://github.com/shiningUnderstanding/study_development/tree/master/data%20structure)
 
-* network
+* [network](https://github.com/shiningUnderstanding/study_development/tree/master/network)
 
-* OS
+* [OS](https://github.com/shiningUnderstanding/study_development/tree/master/OS)
