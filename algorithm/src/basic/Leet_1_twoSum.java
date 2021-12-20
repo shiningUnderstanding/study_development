@@ -1,6 +1,6 @@
 package basic;
 
-public class Leete_1_twoSum {
+public class Leet_1_twoSum {
     public int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
         int length = nums.length;
