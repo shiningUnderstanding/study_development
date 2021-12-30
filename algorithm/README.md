@@ -4,12 +4,13 @@
  지금부터는 배웠던 것들을 조금씩 정리를 해보려고 합니다.</br>
  배우고 있는 JAVA를 위주로 풀어나가겠습니다.
  
-1.java
+* [java](https://github.com/shiningUnderstanding/study_development/tree/master/java)
 
-2.algorithm
+* [algorithm](https://github.com/shiningUnderstanding/study_development/tree/master/algorithm)
 
-3.data structure
+* [data structure](https://github.com/shiningUnderstanding/study_development/tree/master/data%20structure)
 
-4.network
+* [network](https://github.com/shiningUnderstanding/study_development/tree/master/network)
 
-5.OS
+* [OS](https://github.com/shiningUnderstanding/study_development/tree/master/OS)
+
