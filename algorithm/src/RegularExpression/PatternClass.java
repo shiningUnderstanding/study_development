@@ -27,19 +27,35 @@ public class PatternClass {
 		data = "010-2154-1542";
 		regExp(regExp, data);
 		
+		regExp = "[01021541542]";
+		data = "010-2154-1542";
+		regExp(regExp, data);
+		
 		//-----------------------------
 		// abc
 		regExp = "abc";
 		data = "abc";
 		regExp(regExp, data);
 		
+		data = "abc d";
+		System.out.println(data.replaceAll(regExp, "s"));
+		
 		regExp = "abc";
-		data = "abc";
+		data = "abc d";
 		regExp(regExp, data);
 		
 		// 123
 		regExp = "123";
 		data = "123";
+		regExp(regExp, data);
+		
+		//^$
+		regExp = "^a";
+		data = "a";
+		regExp(regExp, data);
+		data = "acs";
+		regExp(regExp, data);
+		data = "bcaa";
 		regExp(regExp, data);
 		
 		// \.
@@ -48,7 +64,7 @@ public class PatternClass {
 		regExp(regExp, data);
 		
 		// []
-		regExp = "^[abc][a-z]$";
+		regExp = "[abc][a-z]";
 		data = "ac";
 		regExp(regExp, data);
 		data = "bs";
@@ -66,5 +82,10 @@ public class PatternClass {
 		regExp(regExp, data);
 		data = "ab";
 		regExp(regExp, data);
+		
+		//String.matches .*
+		if("ab".matches("[a].*")) {
+			System.out.println(true);
+		}
 	}
 }
