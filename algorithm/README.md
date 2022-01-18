@@ -14,6 +14,8 @@
 
 - [OS](https://github.com/shiningUnderstanding/study_development/tree/master/OS)
 
+알고리즘 문제 해결에 접근하는 과정
+
 1. 문제를 읽고 문제를 파악하기
 
 2. 문제를 해결할 계획 세우기
