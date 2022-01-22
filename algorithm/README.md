@@ -1,15 +1,20 @@
 # study_development
+ 
+ 현재까지 기본적인 자바 문법들과 여러가지 알고리즘 자료구조 문제들을 풀어 봤었습니다.</br>
+ 지금부터는 배웠던 것들을 조금씩 정리를 해보려고 합니다.</br>
+ 배우고 있는 JAVA를 위주로 풀어나가겠습니다.
+ 
+* [java](https://github.com/shiningUnderstanding/study_development/tree/master/java)
 
-현재까지 기본적인 자바 문법들과 여러가지 알고리즘 자료구조 문제들을 풀어 봤었습니다.</br>
-지금부터는 배웠던 것들을 조금씩 정리를 해보려고 합니다.</br>
-배우고 있는 JAVA를 위주로 풀어나가겠습니다.
+* [algorithm](https://github.com/shiningUnderstanding/study_development/tree/master/algorithm)
 
-- [java](https://github.com/shiningUnderstanding/study_development/tree/master/java)
+* [data structure](https://github.com/shiningUnderstanding/study_development/tree/master/data%20structure)
 
-- [algorithm](https://github.com/shiningUnderstanding/study_development/tree/master/algorithm)
+* [network](https://github.com/shiningUnderstanding/study_development/tree/master/network)
 
-- [data structure](https://github.com/shiningUnderstanding/study_development/tree/master/data%20structure)
+* [OS](https://github.com/shiningUnderstanding/study_development/tree/master/OS)
 
+<<<<<<< HEAD
 - [network](https://github.com/shiningUnderstanding/study_development/tree/master/network)
 
 - [OS](https://github.com/shiningUnderstanding/study_development/tree/master/OS)
@@ -25,3 +30,5 @@
 4. 계획을 코드화 시키기
 
 5. 개선점 찾기
+=======
+>>>>>>> parent of 78c9113 (READ.ME)
