@@ -1,8 +1,11 @@
 package sort;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.BufferedReader;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 public class Baekjoon_18870_coordinateCompression {
@@ -15,16 +18,22 @@ public class Baekjoon_18870_coordinateCompression {
 			x[i] = Integer.parseInt(st.nextToken());
 		}
 		
-		StringBuilder sb = new StringBuilder();
+		int[] copy = x.clone();
+		Arrays.sort(copy);
+		
+		
+		Map<Integer, Integer> xSort = new HashMap<>();
 		int count = 0;
 		for(int i = 0; i < N; i++) {
-			count = 0;
-			for(int j = 0; j < N; j++) {
-				if(x[i] > x[j]) {
-					count++;
-				}
+			if(i > 0 && copy[i] == copy[i - 1]) {
+				count--;
 			}
-			sb.append(count).append(' ');
+			xSort.put(copy[i], count++);
+		}
+		
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < N; i++) {
+			sb.append(xSort.get(x[i])).append(' ');
 		}
 		
 		System.out.println(sb);
