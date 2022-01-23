@@ -14,10 +14,6 @@
 
 * [OS](https://github.com/shiningUnderstanding/study_development/tree/master/OS)
 
-<<<<<<< HEAD
-- [network](https://github.com/shiningUnderstanding/study_development/tree/master/network)
-
-- [OS](https://github.com/shiningUnderstanding/study_development/tree/master/OS)
 
 알고리즘 문제 해결에 접근하는 과정
 
@@ -30,5 +26,3 @@
 4. 계획을 코드화 시키기
 
 5. 개선점 찾기
-=======
->>>>>>> parent of 78c9113 (READ.ME)
