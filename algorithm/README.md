@@ -15,7 +15,7 @@
 * [OS](https://github.com/shiningUnderstanding/study_development/tree/master/OS)
 
 
-알고리즘 문제 해결에 접근하는 과정
+## 알고리즘 문제 해결에 접근하는 과정
 
 1. 문제를 읽고 문제를 파악하기
 
@@ -26,3 +26,15 @@
 4. 계획을 코드화 시키기
 
 5. 개선점 찾기
+
+## 알고리즘의 종류
+
+1. Basic(기본적인 수학 알고리즘)
+2. Sort(정렬 알고리즘)
+3. Brute force
+4. Recursive
+5. Back tracking
+6. Greedy
+7. Dynamic programming
+8. Dfs Bfs
+9. Tree
