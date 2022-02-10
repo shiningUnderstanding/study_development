@@ -3,6 +3,7 @@ package collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class MapStudy {
 	public static void main(String[] args) {
@@ -18,6 +19,20 @@ public class MapStudy {
 		Set<String> genreKey = genres.keySet();
 		for(String key: genreKey) {
 			System.out.println(key + " : " + genres.get(key));
+		}
+		
+		Map<String, Integer> treeGenres = new TreeMap<>();
+		treeGenres.put("hipop", 1000);
+		treeGenres.put("hipop", treeGenres.getOrDefault("hipop", 0) + 1000);
+		System.out.println("hipop : " + treeGenres.get("hipop"));
+		treeGenres.put("pop", 2000);
+		treeGenres.put("ballad", 3000);
+		treeGenres.put("R&B", 1000);
+		System.out.println("size : " + treeGenres.size());
+		
+		Set<String> treeGenresKey = treeGenres.keySet();
+		for(String key: treeGenresKey) {
+			System.out.println(key + " : " + treeGenres.get(key));
 		}
 	}
 }
