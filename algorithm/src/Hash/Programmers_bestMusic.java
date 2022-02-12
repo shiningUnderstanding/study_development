@@ -11,7 +11,7 @@ public class Programmers_bestMusic {
 	        //장르별, 고유번호별 hash
 	        Map<String,Integer> genresMap = new HashMap<>();
 	        for(int i = 0; i < genres.length; i++){
-	            genresMap.put(genres[i], genresMap.getOrDefault(plays[i], 0) + plays[i]);
+	            genresMap.put(genres[i], genresMap.getOrDefault(genres[i], 0) + plays[i]);
 	        }
 	        List<String> genreList = new ArrayList<>(genresMap.keySet());
 
