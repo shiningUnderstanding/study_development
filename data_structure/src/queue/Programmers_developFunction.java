@@ -5,7 +5,6 @@ public class Programmers_developFunction {
 	        int[] count = new int[100];
 	        int day = 0;
 	        for(int i = 0; i < progresses.length; i++){
-	            day = 0;
 	            while(progresses[i] < 100){
 	                progresses[i] += speeds[i];
 	                day++;
@@ -22,7 +21,16 @@ public class Programmers_developFunction {
 	        }
 	        
 	        int[] answer = new int[size];
+	        
+	        size = 0;
+	        for(int i : count) {
+	        	if(i != 0) {
+	        		answer[size++] = i;
+	        	}
+	        }
 	        return answer;
 	    }
+	    
+	    
 	
 }
