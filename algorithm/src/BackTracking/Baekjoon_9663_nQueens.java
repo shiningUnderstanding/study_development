@@ -30,7 +30,13 @@ public class Baekjoon_9663_nQueens {
 	}
 	
 	public static boolean check(int col) {
-		
+		for(int i = 0; i < col; i++) {
+			if(line[col] == line[i]) {
+				return false;
+			}else if(Math.abs(col - i) == Math.abs(line[col] - line[i])) {
+				return false;
+			}
+		}	
 		return true;
 	}
 }
