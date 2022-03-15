@@ -21,7 +21,7 @@ public class Baekjoon_2580_sudoku {
 		}
 		
 		sudoku(0, 0);
-		System.out.println(sb);
+		
 	}
 	
 	public static void sudoku(int row, int col) {
@@ -37,7 +37,8 @@ public class Baekjoon_2580_sudoku {
 				}
 				sb.append('\n');
 			}
-			return;
+			System.out.println(sb);
+			System.exit(0);
 		}
 		
 		if(sudoku[row][col] == 0) {
@@ -55,6 +56,29 @@ public class Baekjoon_2580_sudoku {
 	}
 	
 	public static boolean check(int row, int col, int val) {
+		
+		for(int i = 0; i < 9; i++) {
+			if(sudoku[row][i] == val) {
+				return false;
+			}
+		}
+		
+		for(int i = 0; i < 9; i++) {
+			if(sudoku[i][col] == val) {
+				return false;
+			}
+		}
+		
+		int start_row = (row / 3) * 3;
+		int start_col = (col / 3) * 3;
+		
+		for(int i = start_row; i <start_row + 3; i++) {
+			for(int j = start_col; j < start_col + 3; j++) {
+				if(sudoku[i][j] == val) {
+					return false;
+				}
+			}
+		}
 		
 		return true;
 	}
