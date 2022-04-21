@@ -1,4 +1,4 @@
-package Hash;
+package hash;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +15,7 @@ public class Programmers_phoneNumberHash {
                     return false;
                 }
             }
-
+            
         }
         return true;
     }

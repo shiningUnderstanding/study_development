@@ -1,4 +1,4 @@
-package BackTracking;
+package backTracking;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

@@ -1,4 +1,4 @@
-package Hash;
+package hash;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,6 +17,7 @@ public class Programmers_bestMusic {
 
 	        Collections.sort(genreList, (e1, e2) -> genresMap.get(e2) - genresMap.get(e1));
 	        
+	       
 	        List<Integer> bestList = new ArrayList<>();
 	        for(String genre: genreList) {
 	        	int max = 0;
